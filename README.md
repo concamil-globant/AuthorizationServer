@@ -21,14 +21,18 @@ Once you download the server:
 1. On left corner click "Clients"
 2. Click add new client
 3. for this project it was "login-app"
-4. Setup is its default, except for the Valid Redirect URIs field. 
-   
-This field should contain the application URL(s) that will use this client for authentication:
-http://localhost:8081/*
+4. Check Authorization Enabled
+5. * Valid Redirect URIs: http://localhost:8081/* (Microservice route here)
+6. In "Credentials Tab" we have the secret (this is useful for further configurations)
+7. In Roles, add two roles: admin and user
 
 **Create Role**
 1. In the left corner select "Roles" then create new role
 2. We created the role "comfenalcouser"
+3. Turn on "Composite Roles"
+4. In Client Roles, check roles; for this i add user role
+
+![img.png](readme_img/userroles.png)
 
 **User**
 1. In the left corner select "Users"
@@ -45,9 +49,7 @@ Check how after realms in the url we are calling our "ComfenalcoKeycloak"
 2. Send the credentials we created before as the image below
 3. In response, we'll get an access_token and a refresh_token.
 
-
 ![img.png](readme_img/gettoken.png)
-
 
 4. The access token should be used in every request to a Keycloak-protected resource by simply placing it in the Authorization header
 
@@ -68,4 +70,12 @@ Keycloak will respond to this with a new access_token and refresh_token.
 **Setup and configuration for Spring Boot Application**
 
 Configuration and setup for application.properties keycloak setup
+
+
 ![img.png](readme_img/propertiesconfig.png)
+
+**For Testing**
+
+1. Generate token with postman
+2. Free Access: http://localhost:8081/test/all-user
+3. Limited Access: http://localhost:8081/test/comfenalco-user

@@ -1,4 +1,4 @@
-package co.comfenalco.AuthorizationServer;
+package com.security.AuthorizationServer;
 
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
