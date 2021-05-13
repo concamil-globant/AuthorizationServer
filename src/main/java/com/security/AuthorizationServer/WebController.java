@@ -1,0 +1,27 @@
+package com.security.AuthorizationServer;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/test")
+public class WebController {
+
+  @RequestMapping(value = "/anonymous", method = RequestMethod.GET)
+  public ResponseEntity<String> getAnonymous() {
+    return ResponseEntity.ok("Hello Anonymous");
+  }
+
+  @RequestMapping(value = "/all-user", method = RequestMethod.GET)
+  public ResponseEntity<String> getAllUser() {
+    return ResponseEntity.ok("Hello All User");
+  }
+
+  @RequestMapping(value = "/comfenalco-user", method = RequestMethod.GET)
+  public ResponseEntity<String> getAdmin() {
+    return ResponseEntity.ok("Hello Authenticated User");
+  }
+
+}
