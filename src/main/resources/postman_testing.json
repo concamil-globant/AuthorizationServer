@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "4b66b4e0-89f6-4e16-8dda-497d13257014",
+		"name": "Comfenalco Keycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "login-app",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "e02f166e-60b1-4628-8474-6f63e62fb26b",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/ComfenalcoKeycloak/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"ComfenalcoKeycloak",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/test/all-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"all-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logged User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRT09Nem9ER2J4QjZTUWI1WklpQi0zTEJBc0gycjNQQVhybWxDTF9aWS04In0.eyJleHAiOjE2MjA5Mzk0NzUsImlhdCI6MTYyMDkzOTE3NSwianRpIjoiMjhjNzg3YTEtZmM5Yy00YThkLWIzYmMtYjZlYmMyZTE1NDcyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0NvbWZlbmFsY29LZXljbG9hayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1ZWQ2ZjRiNS03ZDhhLTRhOGItYjM3ZC0yZGFiMWM3NTUxNzIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJsb2dpbi1hcHAiLCJzZXNzaW9uX3N0YXRlIjoiMThiNjAwODYtNGE3My00M2EwLWI4OTctZWE0YjI1NTcxMzk1IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1jb21mZW5hbGNva2V5Y2xvYWsiLCJjb21mZW5hbGNvdXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImxvZ2luLWFwcCI6eyJyb2xlcyI6WyJ1c2VyIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.TLUq2zWOMOnZLC14hIfsnECx_InFhQIJ3LA2tmCybPUQTwJwVPrx01Os5uYOpnkdf2Fz9ZARFQbaUvTkb5ol4i-tFmaOdJLO1IfepkJQ0EhrbVPUGddvGS98GNYaqUHbVITsMuh-PrQdHrb-ZgubBUW1ktZKlAAye5ebgnq0mGnViY2PAQarc-8EKxW6s43vOYSsqPikDDADKPmohGAbI67u_Hp0iHUi8ueL_Ib2Dww5EifgUOcD1WHwb_Uk_K_jFS0pclLzMAwBOBCQOFQ6MR95Ohh0Im6aN6MX4xwRjHpye1aLBkXSbstrZqphTa9HGBtpe4DmXjSaFdnRr-Rl-w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/test/comfenalco-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"comfenalco-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
